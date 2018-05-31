@@ -70,7 +70,8 @@ execute rotation script
 
 |+   |normal |inverted |left |right | restore |       |
 |----|-------|---------|-----|------|---------|-------|
-|+90°|   0°  |   180°  | 90° | 270° |last used|current|  
+|+90°|   0°  |   180°  | 90° | 270° |last used|current|
+
 (counter clockwise)
 
 execute brightness script  
