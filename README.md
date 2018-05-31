@@ -116,7 +116,7 @@ on fast systems startup delay can be reduced
 - - -
 
 ### remarks  
-\- developed with Linux Mint 18.3 on Asus T102HA Mini Transformer with Visual Studio Code  
+\- developed under Linux Mint 18.3 on Asus T102HA Mini Transformer with Visual Studio Code  
 \- not tested on other machines but might work well on various notebooks, tablets and convertibles
 
 __inspired by__  
