@@ -68,17 +68,17 @@ make scripts executable once
 execute rotation script  
 `$ ./rotate.sh [+|normal|inverted|left|right|restore]`
 
-|+   |normal |inverted |left |right | restore |
-|----|-------|---------|-----|------|---------|
-|+90°|   0°  |   180°  | 90° | 270° |last used|
+|+   |normal |inverted |left |right | restore |       |
+|----|-------|---------|-----|------|---------|-------|
+|+90°|   0°  |   180°  | 90° | 270° |last used|current|
 (counter clockwise)
 
 execute brightness script  
 `$ ./bright.sh [-|+|[10-100]|restore]`
 
-|   -  |    +   | 10-100 | restore |
-|------|--------|--------|---------|
-|darker|brighter|absolute|last used|
+|   -  |    +   | 10-100 | restore |       |
+|------|--------|--------|---------|-------|
+|darker|brighter|absolute|last used|current|
 
 - - -
 
