@@ -1,6 +1,6 @@
-# rotBright - touch rotation brightness
+# rotBright - rotation brightness
 
-#### Linux bash scripts to get display, brightness, touchscreen (and pen) in tune 
+#### Linux bash scripts to get display, brightness, touchscreen (and pen) in tune
 Linux distributions tend to neglect thorough special key handling, brightness control, touchscreen and pen support,  
 especially notebook, tablet and convertible users suffer from half-cooked, incorrect or missing implementation.
 
@@ -8,7 +8,7 @@ In many cases devices are recognized correctly, so let's use what we got and try
 
 - - -
 
-### download  
+### download
 download repository from GitHub,  
 unzip and copy for example to: ~/rotBright
 
@@ -30,7 +30,7 @@ clone shrink repository to current directory
 
 - - -
 
-### configure  
+### configure
 figure out your machines touch (and pen) device  
 `$ xinput -list`
 
@@ -57,7 +57,7 @@ RESTBRIGHT=true                         # restore brightness
 
 - - -
 
-### execute  
+### execute
 change directory  
 `$ cd ~/rotBright`
 
@@ -80,6 +80,8 @@ execute brightness script
 |   -  |    +   | 10-100 | restore |       |
 |------|--------|--------|---------|-------|
 |darker|brighter|absolute|last used|current|
+
+see [configure](#configure) to execute rotate.sh in combination with bright.sh
 
 - - -
 
@@ -115,7 +117,7 @@ on fast systems startup delay can be reduced
 
 - - -
 
-### remarks  
+### remarks
 \- developed under Linux Mint 18.3 on Asus T102HA Mini Transformer with Visual Studio Code  
 \- not tested on other machines but might work well on various notebooks, tablets and convertibles
 
@@ -132,13 +134,13 @@ Donations are welcome!
 
 - - -
 
-### history  
+### history
 V0.5  
 initial version
 
 - - -
 
-### copyright  
+### copyright
 rotBright is published under the terms of MIT license
 
 Copyright (c) 2018 [qrt@qland.de](mailto:qrt@qland.de)
