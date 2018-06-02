@@ -14,8 +14,9 @@ unzip and copy for example to: ~/rotBright
 
 **or**
 
-copy script to current directory  
-`wget https://raw.github.com/qrti/rotBright/master/script/*.sh`
+copy scripts to current directory  
+`wget https://raw.github.com/qrti/rotBright/master/script/rotate.sh`  
+`wget https://raw.github.com/qrti/rotBright/master/script/bright.sh`
 
 **or**
 
