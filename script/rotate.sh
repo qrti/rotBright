@@ -11,8 +11,8 @@
 # note the input device(s) you want to rotate
 #if unused -> DEVICE1=
 DEVICE0="ELAN22A6:00 04F3:22A6"         # Asus T102HA touchscreen
-DEVICE1="ELAN22A6:00 04F3:22A6 Pen"     #             pen
-DEVICE2="ASUS HID Device ASUS HID Device Touchpad"     #             touchpad
+DEVICE1="ELAN22A6:00 04F3:22A6 Pen Pen (0)"            # pen
+DEVICE2="ASUS HID Device ASUS HID Device Touchpad"     # touchpad
 
 # display rotation might set brighness to maximum
 # bright.sh must be executable in same directory (if set to true)
