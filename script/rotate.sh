@@ -12,6 +12,7 @@
 #if unused -> DEVICE1=
 DEVICE0="ELAN22A6:00 04F3:22A6"         # Asus T102HA touchscreen
 DEVICE1="ELAN22A6:00 04F3:22A6 Pen"     #             pen
+DEVICE2="ASUS HID Device ASUS HID Device Touchpad"     #             touchpad
 
 # display rotation might set brighness to maximum
 # bright.sh must be executable in same directory (if set to true)
@@ -35,25 +36,29 @@ function do_rotate
   xrandr --output $1 --rotate $2
 
   TRANSFORM='Coordinate Transformation Matrix'
-
   case "$2" in
     normal)
       [ ! -z "$DEVICE0" ] && xinput set-prop "$DEVICE0" "$TRANSFORM" 1 0 0 0 1 0 0 0 1
       [ ! -z "$DEVICE1" ] && xinput set-prop "$DEVICE1" "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      [ ! -z "$DEVICE2" ] && xinput set-prop "$DEVICE2" "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
       ;;
     inverted)
       [ ! -z "$DEVICE0" ] && xinput set-prop "$DEVICE0" "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
       [ ! -z "$DEVICE1" ] && xinput set-prop "$DEVICE1" "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      [ ! -z "$DEVICE2" ] && xinput set-prop "$DEVICE2" "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
       ;;
     left)
       [ ! -z "$DEVICE0" ] && xinput set-prop "$DEVICE0" "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
       [ ! -z "$DEVICE1" ] && xinput set-prop "$DEVICE1" "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      [ ! -z "$DEVICE2" ] && xinput set-prop "$DEVICE2" "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
       ;;
     right)
       [ ! -z "$DEVICE0" ] && xinput set-prop "$DEVICE0" "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
       [ ! -z "$DEVICE1" ] && xinput set-prop "$DEVICE1" "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      [ ! -z "$DEVICE2" ] && xinput set-prop "$DEVICE2" "$TRANSFORM" 1 0 0 0 1 0 0 0 1
       ;;
   esac
+
 }
 
 #-------------------------------------------------------------------------------
