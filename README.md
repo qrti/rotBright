@@ -1,10 +1,10 @@
-# rotBright - rotation brightness
+# rotBright - rotation & brightness
 
 #### Linux bash scripts to get display, brightness, touchscreen (and pen) in tune
 Linux distributions tend to neglect thorough special key handling, brightness control, touchscreen and pen support,  
 especially notebook, tablet and convertible users suffer from half-cooked, incorrect or missing implementation.
 
-In many cases devices are recognized correctly, so let's use what we got and try to mend it for daily use.
+In many cases system devices are recognized correctly, so let's use what we got and try to mend it for daily use.
 
 - - -
 
@@ -38,19 +38,20 @@ figure out your machines touch (and pen) device
 edit the script  
 `$ nano rotate.sh`
 
-replace the preconfigured entries with your data
+if necessary replace preconfigured entries, for correct pen configuration see -> [remarks](#remarks)
 ```
-DEVICE0="ELAN22A6:00 04F3:22A6"         # Asus T102HA touchscreen
-DEVICE1="ELAN22A6:00 04F3:22A6 Pen"     #             pen
+DEVICE0="ELAN22A6:00 04F3:22A6"                     # Asus T102HA touchscreen
+DEVICE1="ELAN22A6:00 04F3:22A6 Pen Pen (0)"         #             pen
+DEVICE2="ASUS HID Device ASUS HID Device Touchpad"  #             touchpad
 ```
 
-leave the second entry empty to configure only one device
+leave an entry empty to not configure a device
 ```
 DEVICE0="YOUR_DEVICE:xx xxxx:xxxx"      # your touchscreen
 DEVICE1=
 ```
 
-display rotation might set brightness to maximum, so it has to be restored as well  
+display rotation possibly sets brightness to maximum, so it has to be restored as well  
 executing rotate.sh will also call bright.sh and restore brightness if
 ```
 RESTBRIGHT=true                         # restore brightness
@@ -119,7 +120,20 @@ on fast systems startup delay can be reduced
 - - -
 
 ### remarks
-\- developed under Linux Mint 18.3 on Asus T102HA Mini Transformer with Visual Studio Code  
+\- for correct pen restauration please consider
+
+directly after boot a generic pen device will be listed with xinput  
+`ELAN22A6:00 04F3:22A6 Pen`
+
+after first pen use a device instance is added to the list  
+`ELAN22A6:00 04F3:22A6 Pen Pen (0)`
+
+use this instance in the script -> [configure](#configure)
+
+\- restoring pen orientation after boot and first pen use requires a manual  
+`$ ./rotate.sh restore`
+
+\- developed under Linux Mint on Asus T102HA Mini Transformer with Visual Studio Code  
 \- not tested on other machines but might work well on various notebooks, tablets and convertibles
 
 __inspired by__  
@@ -137,14 +151,18 @@ Donations are welcome!
 
 ### history
 V0.5  
-initial version
+\- initial version
+
+V0.6  
+\- proper touchpad support (thanks to [np2048](https://github.com/np2048))  
+\- fixed 'rotation +' bug
 
 - - -
 
 ### copyright
 rotBright is published under the terms of MIT license
 
-Copyright (c) 2018 [qrt@qland.de](mailto:qrt@qland.de)
+Copyright (c) 2019 [qrt@qland.de](mailto:qrt@qland.de)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

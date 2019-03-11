@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# rotate.sh V0.5 180531 qrt@qland.de
+# rotate.sh V0.6 190311 qrt@qland.de
 # linux bash script for rotation control (display + touchscreen + optional pen)
 
 # make script executable
@@ -10,9 +10,9 @@
 # $ xinput -list
 # note the input device(s) you want to rotate
 #if unused -> DEVICE1=
-DEVICE0="ELAN22A6:00 04F3:22A6"         # Asus T102HA touchscreen
-DEVICE1="ELAN22A6:00 04F3:22A6 Pen Pen (0)"            # pen
-DEVICE2="ASUS HID Device ASUS HID Device Touchpad"     # touchpad
+DEVICE0="ELAN22A6:00 04F3:22A6"                     # Asus T102HA touchscreen
+DEVICE1="ELAN22A6:00 04F3:22A6 Pen Pen (0)"         #             pen
+DEVICE2="ASUS HID Device ASUS HID Device Touchpad"  #             touchpad
 
 # display rotation might set brighness to maximum
 # bright.sh must be executable in same directory (if set to true)
@@ -26,8 +26,8 @@ CUDIS=`xrandr --current | grep primary | sed -e 's/ .*//g'` # current display
 CUORI=`xrandr --current --verbose | grep primary | egrep -o '\) '$ORIA1' \(' | egrep -o $ORIA1` # current orientation
 
 path=`dirname $0`                       # arguments
-file="$path/rotate.dat"     
-arg1="$1"                             
+file="$path/rotate.dat"
+arg1="$1"
 
 #-------------------------------------------------------------------------------
 
@@ -69,28 +69,28 @@ if [ -z "$arg1" ]; then                 # show current
 fi
 
 if [ "$arg1" == "restore" ]; then       # restore
-    if [ -f "$file" ]; then             # stored   
-        ori=`cat $file`                 
+    if [ -f "$file" ]; then             # stored
+        ori=`cat $file`
     else                                # current
-        ori=$CUORI                       
+        ori=$CUORI
     fi
 elif [ "$arg1" == "+" ]; then           # +
     for i in ${!ORIA0[*]}; do
         if [ "$CUORI" == ${ORIA0[$i]} ]; then
-            ori=${ORIA0[($i+1) % 4]]}
+            ori=${ORIA0[($i+1) % 4]}
             break
         fi
     done
 else                                    # new
-    ori=$arg1                           
+    ori=$arg1
 fi
                                         # check
 if [ "$ori" == "normal" ]   || [ "$ori" == "left" ] ||
-   [ "$ori" == "inverted" ] || [ "$ori" == "right" ]; then 
+   [ "$ori" == "inverted" ] || [ "$ori" == "right" ]; then
     :
 else                                    # invalid
     echo "invalid argument"
-    echo "usage: ./rotate.sh [+|normal|inverted|left|right|restore]" 
+    echo "usage: ./rotate.sh [+|normal|inverted|left|right|restore]"
     exit 1
 fi
 
