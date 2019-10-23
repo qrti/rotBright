@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# rotate.sh V0.6 190311 qrt@qland.de
+# rotate.sh V0.7 191023 qrt@qland.de
 # linux bash script for rotation control (display + touchscreen + optional pen)
 
 # make script executable
@@ -10,8 +10,9 @@
 # $ xinput -list
 # note the input device(s) you want to rotate
 #if unused -> DEVICE1=
-DEVICE0="ELAN22A6:00 04F3:22A6"                     # Asus T102HA touchscreen
-DEVICE1="ELAN22A6:00 04F3:22A6 Pen Pen (0)"         #             pen
+
+DEVICE0="pointer:ELAN22A6:00 04F3:22A6"             # Asus T102HA touchscreen
+DEVICE1="ELAN22A6:00 04F3:22A6 Pen (0)"             #             pen
 DEVICE2="ASUS HID Device ASUS HID Device Touchpad"  #             touchpad
 
 # display rotation might set brighness to maximum

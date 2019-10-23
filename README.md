@@ -40,8 +40,8 @@ edit the script
 
 if necessary replace preconfigured entries, for correct pen configuration see -> [remarks](#remarks)
 ```
-DEVICE0="ELAN22A6:00 04F3:22A6"                     # Asus T102HA touchscreen
-DEVICE1="ELAN22A6:00 04F3:22A6 Pen Pen (0)"         #             pen
+DEVICE0="pointer:ELAN22A6:00 04F3:22A6"             # Asus T102HA touchscreen
+DEVICE1="ELAN22A6:00 04F3:22A6 Pen (0)"             #             pen
 DEVICE2="ASUS HID Device ASUS HID Device Touchpad"  #             touchpad
 ```
 
@@ -156,6 +156,9 @@ V0.5
 V0.6  
 \- proper touchpad support (thanks to [np2048](https://github.com/np2048))  
 \- fixed 'rotation +' bug
+
+rotate V0.7  
+\- corrected device entries
 
 - - -
 
